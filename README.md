@@ -16,7 +16,7 @@ Para instalar o RabbitMQ 3.6.1 é recomendável usar o homebrew e seguir os pass
 1. brew update
 2. brew install rabbitmq
 
-# Mac: Como iniciar e acessar o console administrativo do RabbotMQ
+# Mac: Como iniciar e acessar o console administrativo do RabbitMQ
 Para iniciar, parar ou ver status do serviço do RabbitMQ:
 
 1. /usr/local/sbin/rabbitmq-server
@@ -49,7 +49,8 @@ Assim, tem-se as seguintes configurações:
 1. Exchange: "iworks-exchange-cadastro" -> 2 Routing Keys: "works-routerkey-cadastro", "works-routerkey-complemento" -> 1 fila: iworks-fila-cadastro"
 2. Exchange: "iworks-exchange-imagem" -> 1 Routing Key: "iworks-routerkey-imagem", "works-routerkey-complemento" -> 1 fila: "iworks-fila-imagem"
 
-- Para produzir uma mensagem na fila basta:
+# Programando: produtor e consumidor
+1. Para produzir uma mensagem na fila basta:
 ```
 @Autowired
 private RabbitTemplate rabbitTemplate;
@@ -65,7 +66,7 @@ public void send() {
 }
 ```
 
-- Para escutar uma mensagem na fila basta:
+2. Para escutar uma mensagem na fila basta:
 ```
 @RabbitLstener(queues = "${fila.cadastro}")
 public void receive(Message mensagem) {}
