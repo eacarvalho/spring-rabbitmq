@@ -40,8 +40,8 @@ public class ProcessamentoProducerServiceImpl implements ProcessamentoProducerSe
 
     @Override
     public void send() {
-        CadastroDTO cadastro = new CadastroDTO(155, "Eduardo - iworks", 35);
-        ComplementoDTO complemento = new ComplementoDTO(155, "Rua Bueno de Andrade");
+        CadastroDTO cadastro = new CadastroDTO(155, "Empresa iworks", 35);
+        ComplementoDTO complemento = new ComplementoDTO(155, "Avenida Paulista");
         ImagemDTO imagem = new ImagemDTO(155, "http://www.iworks.com.br/imagem1.jpg");
 
         rabbitTemplate.convertAndSend(exchangeCadastro, routerKeyCadastro, cadastro);
